@@ -4,11 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 
+// See https://stackoverflow.com/questions/71722483/org-h2-jdbc-jdbcsqlsyntaxerrorexception-syntax-error-in-sql-statement-drop-tab
+// For why this is called Uzer instead of User
 @Entity
-public class User {
+public class Uzer {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -20,9 +21,9 @@ public class User {
     @NotBlank(message = "Email is mandatory")
     private String email;
 
-    public User(){}
+    public Uzer(){}
 
-    public User(String name, String email) {
+    public Uzer(String name, String email) {
         this.name = name;
         this.email = email;
     }

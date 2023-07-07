@@ -1,6 +1,6 @@
 package com.baeldung.beanvalidation.application.controllers;
 
-import com.baeldung.beanvalidation.application.entities.User;
+import com.baeldung.beanvalidation.application.entities.Uzer;
 import com.baeldung.beanvalidation.application.repositories.UserRepository;
 
 import java.util.HashMap;
@@ -30,12 +30,12 @@ public class UserController {
     }
 
     @GetMapping("/users")
-    public List<User> getUsers() {
-        return (List<User>) userRepository.findAll();
+    public List<Uzer> getUsers() {
+        return (List<Uzer>) userRepository.findAll();
     }
 
     @PostMapping("/users")
-    ResponseEntity<String> addUser(@Valid @RequestBody User user) {
+    ResponseEntity<String> addUser(@Valid @RequestBody Uzer uzer) {
         return ResponseEntity.ok("User is valid");
     }
 

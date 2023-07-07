@@ -22,7 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @WebMvcTest
 @AutoConfigureMockMvc
-public class UserControllerIntegrationTest {
+public class UzerControllerIntegrationTest {
 
     @MockBean
     private UserRepository userRepository;

@@ -1,6 +1,6 @@
 package com.baeldung.beanvalidation.application;
 
-import com.baeldung.beanvalidation.application.entities.User;
+import com.baeldung.beanvalidation.application.entities.Uzer;
 import com.baeldung.beanvalidation.application.repositories.UserRepository;
 
 import org.springframework.boot.CommandLineRunner;
@@ -18,10 +18,10 @@ public class Application {
     @Bean
     public CommandLineRunner run(UserRepository userRepository) throws Exception {
         return (String[] args) -> {
-            User user1 = new User("Bob", "bob@domain.com");
-            User user2 = new User("Jenny", "jenny@domain.com");
-            userRepository.save(user1);
-            userRepository.save(user2);
+            Uzer uzer1 = new Uzer("Bob", "bob@domain.com");
+            Uzer uzer2 = new Uzer("Jenny", "jenny@domain.com");
+            userRepository.save(uzer1);
+            userRepository.save(uzer2);
             userRepository.findAll().forEach(System.out::println);
         };
     }
