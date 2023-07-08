@@ -22,6 +22,7 @@ import static org.assertj.core.api.Assertions.assertThat;
 @RunWith(SpringRunner.class)
 @WebMvcTest
 @AutoConfigureMockMvc
+// See https://www.baeldung.com/spring-boot-bean-validation
 public class UzerControllerIntegrationTest {
 
     @MockBean
