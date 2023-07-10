@@ -32,7 +32,7 @@ The validation constraints are given below:
 NOTE: All the validation error messages must be reported in the same order as the corresponding field declaration order.
 
 Here is an example of a valid employe data JSON object:
-```agsl
+```json
 {
   "fullName": "Foo Bar",
   "mobileNumber": 9837465792,
