@@ -51,3 +51,150 @@ There is a single REST API endpoint exposed for receiving employee information.
  `List<FieldValidationMessage>` with status code 400
 
 Your task is to complete the given project so that it passes all the test cases when running the provided *unit* tests.
+
+
+## Example requests and responses
+`POST` request to `/employee`
+
+Request body:
+```json
+{
+  "fullName": null,
+  "mobileNumber": 0,
+  "emailId": null,
+  "dateOfBirth": null
+}
+```
+
+The response code is 400, and when converted to JSON, the response body is:
+
+```json
+[
+  {
+    "message": "The fullName is a mandatory field"
+  },
+  {
+    "message": "The mobileNumber is a mandatory field"
+  },
+  {
+    "message": "The emailId is a mandatory field"
+  },
+  {
+    "message": "The dateOfBirth is a mandatory field"
+  }
+]
+```
+
+`POST` request to `/employee`
+
+Request body:
+
+```json
+{
+  "fullName": "",
+  "mobileNumber": 0,
+  "emailId": "",
+  "dateOfBirth": ""
+}
+```
+
+The response code is 400, and when converted to JSON, the response body is:
+
+```json
+[
+  {
+    "message": "The fullName is a mandatory field"
+  },
+  {
+    "message": "The mobileNumber is a mandatory field"
+  },
+  {
+    "message": "The emailId is a mandatory field"
+  },
+  {
+    "message": "The dateOfBirth is a mandatory field"
+  }
+]
+```
+
+`POST` request to `/employee`
+
+Request body:
+
+```json
+{
+  "fullName": "Foo Bar",
+  "mobileNumber": 123456789,
+  "emailId": "test@gmail.com",
+  "dateOfBirth": "1990-01-01"
+}
+```
+
+The response code is 400, and when converted to JSON, the response body is:
+
+```json
+[
+  {
+    "message": "The mobileNumber is a mandatory field"
+  }
+]
+```
+
+`POST` request to `/employee`
+
+Request body:
+
+```json
+{
+  "fullName": "Foo Bar",
+  "mobileNumber": 1234567891,
+  "emailId": "test-At-gmail.com",
+  "dateOfBirth": "1990-01-01"
+}
+```
+The response code is 400, and when converted to JSON, the response body is:
+
+```json
+[
+  {
+    "message": "The emailId should be in a valid email format"
+  }
+]
+```
+
+`POST` request to `/employee`
+
+Request body:
+
+```json
+{
+  "fullName": "Foo Bar",
+  "mobileNumber": 1234567891,
+  "emailId": "test@gmail.com",
+  "dateOfBirth": "1990/01/01"
+}
+```
+
+The response code is 400, and when converted to JSON, the response body is:
+
+```json
+[
+  {
+    "message": "The dateOfBirth should be in YYYY-MM-DD format"
+  }
+]
+```
+
+`POST` request to `/employee`
+
+Request body:
+```json
+{
+  "fullName": "Foo Bar",
+  "mobileNumber": 1234567891,
+  "emailId": "test@gmail.com",
+  "dateOfBirth": "1990-01-01"
+}
+```
+
+The response code is 200. This adds a new object to the database with the given properties and id 1.
