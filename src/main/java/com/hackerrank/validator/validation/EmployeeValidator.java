@@ -9,6 +9,9 @@ import java.util.Objects;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+// See the following articles for hints on how to do this
+// https://docs.spring.io/spring-framework/docs/4.1.x/spring-framework-reference/html/validation.html
+// https://www.logicbig.com/tutorials/spring-framework/spring-core/error-codes.html
 public class EmployeeValidator implements Validator {
     @Override
     public boolean supports(Class<?> aClass) {
