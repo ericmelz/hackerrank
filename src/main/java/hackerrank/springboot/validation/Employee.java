@@ -1,5 +1,7 @@
 package hackerrank.springboot.validation;
 
+import hackerrank.springboot.validation.util.Messages;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -12,19 +14,18 @@ public class Employee {
     @GeneratedValue
     private Long id;
 
-
-    @NotBlank(message = "The fullName is a mandatory field")
+    @NotBlank(message = Messages.THE_FULL_NAME_IS_A_MANDATORY_FIELD)
     private String fullName;
-    @NotBlank(message = "The mobileNumber is mandatory")
-    @Pattern(regexp = "^\\d{10}$", message = "The mobileNumber is a mandatory field")
+    @NotBlank(message = Messages.THE_MOBILE_NUMBER_IS_A_MANDATORY_FIELD)
+    @Pattern(regexp = "^\\d{10}$", message = Messages.THE_MOBILE_NUMBER_IS_A_MANDATORY_FIELD)
     private String mobileNumber;
 
-    @NotBlank(message = "The emailId is a mandatory field")
-    @Pattern(regexp = "^.*@.*$", message = "The email should be in valid email format")
+    @Pattern(regexp = "^.*@.*$", message = Messages.THE_EMAIL_ID_SHOULD_BE_IN_VALID_EMAIL_FORMAT)
+    @NotBlank(message = Messages.THE_EMAIL_ID_IS_A_MANDATORY_FIELD)
     private String emailId;
 
-    @NotBlank(message = "The dateOfBirth is a mandatory field")
-    @Pattern(regexp = "^\\d{4}-\\d{2}-\\d{2}$")
+    @Pattern(regexp = "^\\d{4}-\\d{2}-\\d{2}$", message = Messages.THE_DATE_OF_BIRTH_SHOULD_BE_IN_YYYY_MM_DD_FORMAT)
+    @NotBlank(message = Messages.THE_DATE_OF_BIRTH_IS_A_MANDATORY_FIELD)
     private String dateOfBirth;
 
     public String getFullName() {
