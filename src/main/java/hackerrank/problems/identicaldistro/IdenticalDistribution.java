@@ -11,7 +11,18 @@ public class IdenticalDistribution {
      */
 
     public static int cardPackets(List<Integer> cardTypes) {
-        // Write your code here
-        return -1;
+
+        int minExtraCards = Integer.MAX_VALUE;
+        for (int numPackets = 2; numPackets <= 4; numPackets++) {
+            int sum = 0;
+            for (int numCards: cardTypes) {
+                int cardsNeeded = (numCards % numPackets) == 0 ? 0 : numPackets - numCards % numPackets;
+                sum += cardsNeeded;
+            }
+            if (sum <= minExtraCards) {
+                minExtraCards = sum;
+            }
+        }
+        return minExtraCards;
     }
 }
