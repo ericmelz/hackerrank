@@ -11,7 +11,6 @@ public class IdenticalDistribution {
      */
 
     public static int cardPackets(List<Integer> cardTypes) {
-
         int minExtraCards = Integer.MAX_VALUE;
         for (int numPackets = 2; numPackets <= 500; numPackets++) {
             int sum = 0;
