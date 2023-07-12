@@ -13,7 +13,7 @@ public class IdenticalDistribution {
     public static int cardPackets(List<Integer> cardTypes) {
 
         int minExtraCards = Integer.MAX_VALUE;
-        for (int numPackets = 2; numPackets <= 4; numPackets++) {
+        for (int numPackets = 2; numPackets <= 500; numPackets++) {
             int sum = 0;
             for (int numCards: cardTypes) {
                 int cardsNeeded = (numCards % numPackets) == 0 ? 0 : numPackets - numCards % numPackets;
