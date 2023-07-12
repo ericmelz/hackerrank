@@ -56,7 +56,7 @@ public class DiscountedPrice {
             jsonObject = (JSONObject) jsonArray.get(0);
             long price = (long) jsonObject.get("price");
             long discount = (long) jsonObject.get("discount");
-            long discountedPrice = (long) (price - ((discount / 100.0) * price));
+            long discountedPrice = Math.round(price - ((discount / 100.0) * price));
             return (int) discountedPrice;
         } catch (IOException e) {
             throw new RuntimeException(e);
