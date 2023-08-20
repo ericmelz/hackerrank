@@ -35,9 +35,6 @@ public class Solution2 {
         List<User> insertions = new ArrayList<>();
         List<User> updates = new ArrayList<>();
 
-        System.out.println("usersListInDb:" + usersListInDB.size());
-        System.out.println("newUsersList:" + newUsersList.size());
-
         Map<Integer, User> db = new HashMap<>();
         for (User oldUser: usersListInDB) {
             db.put(oldUser.getId(), oldUser);
@@ -66,7 +63,6 @@ public class Solution2 {
         Class<?> clazz1 = o1.getClass();
         Class<?> clazz2 = o2.getClass();
         if (!clazz1.equals(clazz2)) {
-//            System.out.println("classes aren't equal");
             return false;
         }
 
@@ -80,7 +76,6 @@ public class Solution2 {
             Object value2 = field.get(o2);
 
             if (!Objects.equals(value1, value2)) {
-//                System.out.println("field " + name + " isn't equal (" + value1 + "," + value2 + ")");
                 return false;
             }
         }
