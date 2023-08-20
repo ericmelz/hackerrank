@@ -135,7 +135,7 @@ public class Solution2 {
             usr.setDepartment(u[13]);
             usr.setRoles(u[14]);
             usr.setJoinDate(u[15].isEmpty() ? null : LocalDate.of(Integer.parseInt(u[15].split("\\.")[0]), Integer.parseInt(u[15].split("\\.")[1]), Integer.parseInt(u[15].split("\\.")[2])));
-            usr.setCredit(u[16].isEmpty() ? 0.0 : Double.parseDouble(u[16]));
+            usr.setCredit(u[16].isEmpty() ? 0.0 : Dozuble.parseDouble(u[16]));
             usr.setStatus(u[17]);
             newUsersList.add(usr);
         }
